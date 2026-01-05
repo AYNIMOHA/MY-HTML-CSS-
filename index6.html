@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horzantal scroll image gallery</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    
+    <div class="gallery-wrap">
+        <img src="ff.jpeg" id="backBtn">
+        <div class="gallery">
+        <div>
+         <span><img src="image1.jpeg"></span>
+         <span><img src="image2.jpeg"></span>
+         <span><img src="image3.jpeg"></span>
+        </div>
+    <div>
+          <span><img src="image4.jpeg"></span>
+         <span><img src="image5.jpeg"></span>
+         <span><img src="image6.jpeg"></span>
+         </div>
+      </div>
+      <img src="hhh.jpeg" id="nextBtn">
+      </div>
+
+      <script>
+        let scrollcontainer = document.querySelector(".gallery");
+        let backBtn =document.getElementById("backBtn");
+        let nextBtn =document.getElementById("nextBtn");
+
+        scrollcontainer.addEventListener("wheel",(even)=>{
+            evt.preventDefault();
+            scrollcontainer.scrollLeft+=evt.deltay;
+        });
+
+        nextBtn.addEventListener("click",()=>{
+            scrollcontainer.style.scrollBehavior ="smooth"
+            scrollcontainer.scrollLeft+=900;
+        });
+
+        backBtn.addEventListener("click",()=>{
+            scrollcontainer.style.scrollBehavior ="smooth"
+            scrollcontainer.scrollLeft-=900;
+        });
+
+      </script>
+
+</body>
+</html>
